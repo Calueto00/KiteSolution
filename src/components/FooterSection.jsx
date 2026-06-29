@@ -14,7 +14,7 @@ export default function FooterSection(){
                 <a href="">email</a>
                 <p>
                     <span>Phone</span>
-                    <span> +244 987654321</span>
+                    <span> +244 933767293</span>
                 </p>
             </div>
             <p className="text-center text-sm"> copyright @All rights reserved {data.getFullYear()}</p>
