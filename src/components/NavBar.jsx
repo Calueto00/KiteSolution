@@ -42,12 +42,32 @@ export default function NavBar(){
                 <nav className="">
                     <div className="flex items-center justify-between">
                         <h1>Kite Solution</h1>
-                        <button className="text-white" onClick={()=> setMenuOPen(!menuOpen)}>Menu</button>
+                        <button className="text-white" onClick={()=> setMenuOPen(!menuOpen)}>
+                            {
+                                menuOpen ? (
+                                    <svg xmlns="http://www.w3.org/2000/svg" 
+                                    className="w-7 h-7 hover:text-red-600 delay-150 duration-300 transition-all transform hover:scale-105 cursor-pointer" 
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <line x1="18" y1="6" x2="6" y2="18" />
+                                    <line x1="6" y1="6" x2="18" y2="18" />
+                                </svg>
+                                ) : (
+                                    <svg xmlns="http://www.w3.org/2000/svg" 
+                                    className="w-7 h-7 text-white hover:text-yellow-600 delay-150 duration-300 transition-all transform hover:scale-105 cursor-pointer" 
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <line x1="3" y1="6" x2="21" y2="6" />
+                                    <line x1="3" y1="12" x2="21" y2="12" />
+                                    <line x1="3" y1="18" x2="21" y2="18" />
+                                </svg>
+                                )
+                            }
+                        </button>
                     </div>
                     {menuOpen && (
                         <ul className="flex flex-col gap-2 text-white text-center mt-4">
                             {links.map((link, index) => (
-                                <Link key={index} to={link.href}>{link.label}</Link>
+                                <Link className="hover:bg-yellow-600 p-2 delay-150 duration-300 rounded-lg 
+                                transition-all transform" key={index} to={link.href}>{link.label}</Link>
                             ))}
                         </ul>
                     )}

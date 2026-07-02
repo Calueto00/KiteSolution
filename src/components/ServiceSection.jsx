@@ -23,17 +23,18 @@ export default function ServiceSection(){
 
     return(
         <>
-            <section className="h-screen bg-slate-200">
+            <section className="h-screen bg-slate-200 p-6 md:p-0">
                 <div className="max-w-5xl mx-auto h-full flex flex-col items-center space-y-7 justify-center">
                     <div className="text-center">
                         <span className="bg-[#f1ce67] bg-clip-text text-transparent font-bold">Nossos Serviços</span>
-                        <h3 className="font-bold text-4xl">Soluções completas para a sua obra</h3>
+                        <h3 className="font-bold md:text-4xl text-3xl">Soluções completas para a sua obra</h3>
                     </div>
 
                     <div className=" grid md:grid-cols-4 grid-cols-1 w-full gap-4">
                         {
                             cards?.map(card => (
-                                <div className="border border-l-3 border-t-4 border-t-[#f1ce67] border-l-[#f1ce67] p-2 rounded-lg shadow-lg border-slate-200 bg-slate-100 space-y-4"
+                                <div className="border border-l-3 border-t-4 border-t-[#f1ce67] border-l-[#f1ce67] md:p-2 p-3 rounded-lg
+                                  shadow-lg border-slate-200 bg-slate-100 md:space-y-4 space-y-3 "
                                     key={card}>
                                         <h4 className="text-lg font-medium">{card?.title}</h4>
                                         <p>{card?.description}</p>

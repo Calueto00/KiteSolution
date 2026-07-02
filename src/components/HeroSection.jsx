@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 
 export default function HeroSection(){
     return (
-        <section className=" relative">
-            <div className='relative h-screen'>
+        <section className="md:h-screen h-[70vh] relative">
+            <div className='relative md:h-screen h-full'>
                 <img 
                 src={teste} 
                 className='inset-0 object-fit h-full w-full'
@@ -12,25 +12,33 @@ export default function HeroSection(){
 
                 <div className='bg-black opacity-70 absolute z-10 inset-0'></div>
             </div>
-            <div className=" h-screen inset-0 absolute z-20 top-0">
-               <div className='h-full max-w-5xl mx-auto flex flex-col justify-center space-y-6'>
-                    <div className="h-1/2 w-1/2 p-6 border-l-5 flex flex-col justify-center rounded-lg border-t-5 border-b-5 border-yellow-600 space-y-2">
-                        <h1 className='md:text-6xl font-bold bg-linear-to-r from-[#c28e2c] via-[#dfb24a] 
+            <div className=" md:h-screen inset-0 absolute z-20 top-0">
+               <div className='md:h-full h-full max-w-5xl mx-auto flex flex-col justify-center md:space-y-6'>
+                    <div className=" p-6 flex flex-col md:justify-center md:text-start text-center md:space-y-3 space-y-3">
+                        <h1 className='md:text-7xl text-5xl font-bold bg-linear-to-r from-[#c28e2c] via-[#dfb24a] 
                         to-[#f8e8a3] bg-clip-text text-transparent'>Kite Soluções</h1>
-                        <p className='text-[#cfcfcf] text-4xl font-semibold'>Construímos o Futuro</p>
-                        <p className='text-white text-4xl font-semibold'>Acabamos com Excelência.</p>
+                        <h2 className='md:text-5xl text-3xl font-bold text-white'>Comércio e Serviços</h2>
+                        <p className='text-[#cfcfcf] md:text-3xl text-2xl font-semibold'>Construímos o Futuro</p>
+                        <p className='text-[#cfcfcf] md:text-3xl text-2xl font-semibold'>Acabamos com Excelência.</p>
 
-                        <div className='mt-6'>
+                        <div className='mt-6 md:space-x-3 space-x-2'>
                             <Link 
-                                className=' rounded-lg px-6 py-3 text-lg 
-                                text-white bg-[#ffbf18]'
-                                to={'/contact'}>Entre em contacto</Link>
+                                
+                                to={'/services'}>
+                                    <button className=' rounded-lg md:px-6 px-4 md:py-3 py-2 text-lg 
+                                text-white cursor-pointer bg-[#ffbf18] delay-150 duration-300 transition-ease-in-out hover:scale-105'>Serviços</button>
+                                </Link>
+                            <Link 
+                                
+                                to={'/contact'}>
+                                    <button className=' rounded-lg md:px-6 px-4 md:py-3 py-2 text-lg cursor-pointer 
+                                        text-white border-yellow-[#ffbf18] border delay-150 duration-300 transition-ease-in-out hover:scale-105'>
+                                        Contacto
+                                    </button>
+                                </Link>
                         </div>
                     </div>
-                    <div className='space-x-6'>
-                        <button className='border-white border p-4 text-white rounded-lg '>Preview</button>
-                        <button className='border-white border p-4 text-white rounded-lg '>Next</button>
-                    </div>
+                    
                </div>
             </div>
         </section>

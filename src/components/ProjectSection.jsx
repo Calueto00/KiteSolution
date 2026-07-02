@@ -4,20 +4,20 @@ import { Link } from 'react-router'
 export default function ProjectSection(){
 
     return(
-        <section className="h-[90vh] bg-slate-100">
-            <div className="max-w-5xl mx-auto h-full flex items-center gap-8 justify-center">
+        <section className="md:h-[90vh] md:p-0 p-6 bg-slate-100">
+            <div className="md:max-w-5xl mx-auto md:h-full flex md:flex-row flex-col items-center gap-8 justify-center">
                 <div className="flex-1 space-y-3">
                     <span className='text-yellow-600 font-bold'>Projectos realizados</span>
-                    <h2 className='text-4xl font-bold'>Transformamos ideias em obras de excelência</h2>
+                    <h2 className='md:text-4xl text-2xl font-bold'>Transformamos ideias em obras de excelência</h2>
 
                     <p className='text-lg text-gray-600'>Cada projeto representa o 
                         nosso compromisso com a qualidade, inovação e satisfação dos clientes. 
                         Conheça alguns dos trabalhos realizados pela 
-                        <span className='font-medium text-black'>Kite Soluções</span>,
+                        <span className='font-medium text-black'> Kite Soluções</span>,
                         onde cada detalhe reflete o nosso profissionalismo e dedicação.
                     </p>
                     
-                    <div className='mt-3'>
+                    <div className='md:mt-3 hidden md:flex'>
                         <Link to={'/contact'}>
                             <button className='hover:scale-110 hover:bg-zinc-800 cursor-pointer delay-150 duration-300 transition-all transform bg-black text-white px-6 py-2 rounded-lg'>
                                 Entre em contacto
@@ -37,6 +37,13 @@ export default function ProjectSection(){
                         <button className='bg-white px-2'>2</button>
                     </div>
                 </div>
+            </div>
+            <div className='mt-3  md:hidden'>
+                        <Link to={'/contact'}>
+                            <button className='hover:scale-110 hover:bg-zinc-800 cursor-pointer delay-150 duration-300 transition-all transform bg-black text-white px-6 py-2 rounded-lg'>
+                                Entre em contacto
+                            </button>
+                        </Link>
             </div>
         </section>
     )

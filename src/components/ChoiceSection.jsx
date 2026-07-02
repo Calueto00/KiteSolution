@@ -2,7 +2,7 @@ import teste from '../assets/images/teste.jpg'
 
 export default function ChoiceSection(){
     return (
-        <section className="h-[80vh] bg-zinc-900 flex items-center justify-center text-white ">
+        <section className="md:h-[80vh] p-6 md:p-0 bg-zinc-900 flex md:flex-row flex-col items-center justify-center text-white ">
             <div className="h-full flex-1 relative">
                 <img 
                     src={teste} 
@@ -11,9 +11,9 @@ export default function ChoiceSection(){
             </div>
             <div className="flex-1 space-y-3 p-8 bg-zinc-800">
                 <span className="bg-yellow-600 font-bold bg-clip-text text-transparent">Motivo</span>
-                <h2 className="md:text-3xl font-bold">Por que escolher a Kite  
+                <h2 className="md:text-3xl text-2xl font-bold">Por que escolher a Kite  
                     <span className="border-b-3 border-b-yellow-600"> Soluções</span>?</h2>
-                <p className="md:text-lg text-slate-200">
+                <p className="text-lg text-slate-200">
                     Oferecemos soluções completas de construção civil e acabamentos <br/> 
                     modernos, garantido qualidade,satisfação dos clientes.
                 </p>
