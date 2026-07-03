@@ -12,7 +12,8 @@ import {
     ShieldCheck,
     Wrench,
 } from 'lucide-react'
-import teste from '../assets/images/teste.jpg'
+import estuque from '../assets/fotos/estuque.jpg'
+import about from '../assets/fotos/about.png'
 
 export default function ServicePage(){
 
@@ -97,7 +98,7 @@ export default function ServicePage(){
     return(
         <>
             <section className='relative min-h-[72vh] overflow-hidden bg-zinc-950'>
-                <img src={teste} className='absolute inset-0 h-full w-full object-cover' alt="" />
+                <img src={estuque} className='absolute inset-0 h-full w-full object-cover' alt="" />
                 <div className="absolute inset-0 bg-black/65"></div>
                 <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-zinc-950 to-transparent"></div>
 
@@ -165,7 +166,7 @@ export default function ServicePage(){
             <section className='bg-zinc-950 px-6 py-16 md:px-0 md:py-20'>
                 <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
                     <div className="relative min-h-[360px] overflow-hidden border border-white/10 shadow-2xl">
-                        <img src={teste} className='absolute inset-0 h-full w-full object-cover' alt="" />
+                        <img src={about} className='absolute inset-0 h-full w-full object-cover' alt="" />
                         <div className="absolute inset-0 bg-black/45"></div>
                         <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent p-6 pt-24">
                             <p className="text-sm font-semibold uppercase tracking-wide text-[#f8e8a3]">Kite Soluções</p>

@@ -1,37 +1,71 @@
 import { Link } from "react-router"
-import teste from '../assets/images/teste.jpg'
+import {
+  ArrowRight,
+  
+} from "lucide-react"
+
+import about2 from '../assets/fotos/about2.png'
 export default function AboutSection(){
 
+    const stats = [
+        {
+          value: 'Obras',
+          label: 'do início ao acabamento',
+        },
+        {
+          value: 'Soluções',
+          label: 'para residências e empresas',
+        },
+        {
+          value: 'Apoio',
+          label: 'próximo em cada projeto',
+        },
+      ]
     return (
         <>
-            <section className="md:h-screen h-[90vh] bg-zinc-900 p-6 md:p-0">
-                <div className="max-w-5xl mx-auto md:h-full h-full flex md:flex-row flex-col justify-center items-center gap-10">
-                        <div className=" md:flex-1 md:h-1/2 relative w-full h-1/2">
-                            <div className="bg-[#f1ce67] h-1/2 w-1/2 absolute md:top-0 md:right-0 top-10 right-10"></div>
-                            <img 
-                                className="absolute z-10 md:left-0 md:w-[97%] md:h-[96%] h-[85%] w-[85%] bottom-0"
-                                src={teste} alt="foto" />
+            <section className="bg-slate-100 px-6 py-16 md:px-0 md:py-20">
+                <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-center">
+                <div className="relative min-h-[360px] overflow-hidden border border-slate-200 bg-white shadow-xl">
+                    <img src={about2} className="absolute inset-0 h-full w-full object-cover" alt="" />
+                    <div className="absolute inset-0 bg-black/45"></div>
+                    <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent p-6 pt-24">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-[#f8e8a3]">Kite Soluções</p>
+                    <h2 className="mt-2 text-3xl font-bold text-white">
+                        Planeamento, execução e acabamento no mesmo nível de cuidado.
+                    </h2>
+                    </div>
+                </div>
+
+                <div className="space-y-6">
+                    <div className="space-y-3">
+                    <span className="font-bold text-yellow-700">Sobre nós</span>
+                    <h2 className="text-3xl font-bold text-zinc-950 md:text-4xl">
+                        Transformamos projetos em espaços seguros e funcionais.
+                    </h2>
+                    <p className="text-lg leading-relaxed text-slate-600">
+                        Atuamos com uma equipa comprometida em entregar obras com qualidade, segurança e eficiência,
+                        desde a fundação até aos acabamentos finais.
+                    </p>
+                    <p className="leading-relaxed text-slate-600">
+                        Trabalhamos lado a lado com cada cliente para entender necessidades, propor soluções realistas
+                        e criar resultados que valorizam imóveis e simplificam o processo.
+                    </p>
+                    </div>
+
+                    <div className="grid gap-3 sm:grid-cols-3">
+                    {stats.map((item) => (
+                        <div key={item.value} className="border border-slate-200 bg-white p-4 shadow-sm">
+                        <strong className="block text-lg text-zinc-950">{item.value}</strong>
+                        <span className="mt-1 block text-sm leading-relaxed text-slate-600">{item.label}</span>
                         </div>
-                        <div className="flex-1 space-y-3">
-                            <span className="bg-[#f1ce67] bg-clip-text text-transparent text-sm">Sobre Nós</span>
-                            <h2 className="md:text-4xl text-2xl font-bold text-white">Quem Somos?</h2>
+                    ))}
+                    </div>
 
-                            <p className="text-lg text-slate-200">
-                                A Kite Soluções Comércio e Serviços é uma 
-                                empresa especializada em construção civil, remodelação, manutenção e acabamentos modernos.
-                            </p>
-
-                            <p className="text-lg text-slate-200">
-                                Construímos, reabilitamos e transformamos espaços, oferecendo soluções 
-                                completas para projectos residenciais, comerciais e institucionais.
-                            </p>
-
-                            <div className="">
-                                    <Link 
-                                        className="px-6 py-2 rounded-lg bg-[#f1ce67] mt-2"
-                                        to={'/about'}>Saber Mais</Link>
-                            </div>
-                        </div>
+                    <Link to="/about" className="inline-flex items-center gap-2 bg-zinc-950 px-6 py-3 font-bold text-white transition duration-300 hover:bg-zinc-800">
+                    Conhecer a empresa
+                    <ArrowRight size={18} />
+                    </Link>
+                </div>
                 </div>
             </section>
         </>

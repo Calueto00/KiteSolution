@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router"
+import logo from '../assets/fotos/logo.png'
 
 export default function NavBar(){
     const [size, setSize] = useState(window.innerWidth)
@@ -35,12 +36,10 @@ export default function NavBar(){
                 {size > 768 && (
                     <nav className="flex items-center justify-between">
                         <Link to="/" className="flex items-center gap-2 group">
-                            <div className="w-8 h-8 bg-gradient-to-r from-[#c28e2c] to-[#ffbf18] rounded-lg flex items-center justify-center font-bold text-white group-hover:scale-110 transition-transform">
-                                K
+                            <div className="w-24 h-8 flex items-center justify-center font-bold text-white group-hover:scale-110 transition-transform">
+                                <img src={logo} className="w-full h-full object-cover" alt="Logo" />
                             </div>
-                            <h1 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#dfb24a] to-[#ffbf18] bg-clip-text text-transparent">
-                                Kite Soluções
-                            </h1>
+                            
                         </Link>
 
                         <ul className="flex gap-8">
@@ -63,12 +62,9 @@ export default function NavBar(){
                     <nav>
                         <div className="flex items-center justify-between">
                             <Link to="/" className="flex items-center gap-2 group" onClick={handleLinkClick}>
-                                <div className="w-7 h-7 bg-gradient-to-r from-[#c28e2c] to-[#ffbf18] rounded-lg flex items-center justify-center font-bold text-white text-sm">
-                                    K
-                                </div>
-                                <h1 className="text-lg font-bold bg-gradient-to-r from-[#dfb24a] to-[#ffbf18] bg-clip-text text-transparent">
-                                    Kite
-                                </h1>
+                                <div className="w-24 h-8 flex items-center justify-center font-bold text-white group-hover:scale-110 transition-transform">
+                                <img src={logo} className="w-full h-full object-cover" alt="Logo" />
+                            </div>
                             </Link>
 
                             <button 

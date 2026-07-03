@@ -1,59 +1,72 @@
 import { Link } from "react-router"
+import {
+  ArrowRight,
+  Building2,
+  Hammer,
+  Paintbrush,
+  
+} from "lucide-react"
 
 export default function ServiceSection(){
 
-    const cards = [
-        {
-            title: 'Construção Civil',
-            description: 'Executamos obras residenciais, comerciais e institucionais com qualidade, segurança e eficiência, desde a fundação até a entrega final.'
-        },
-        {
-            title: 'Remodelação e Reabilitação',
-            description: 'Transformas e modernizamos imóveis, valorizando os espaços através de soluções funcionais.'
-        },
-        {
-            title: 'Estuque e Gesso',
-            description: 'Aplicamos estuque e gesso para criar superfícies lisas, resistentes e prontas para acabamentos de elevada qualidade.'
-        },
-        {
-            title: 'Canalização',
-            description: 'Projetamos, instalamos e efetuamos manutenção de sistemas hidráulicos, garantindo segurança.'
-        }
-    ]
+    
+
+    const services = [
+    {
+      title: 'Construção Civil',
+      description: 'Obras residenciais, comerciais e institucionais com execução segura e acompanhamento profissional.',
+      icon: Building2,
+    },
+    {
+      title: 'Remodelação',
+      description: 'Transformamos espaços existentes em ambientes modernos, funcionais e valorizados.',
+      icon: Hammer,
+    },
+    {
+      title: 'Acabamentos',
+      description: 'Pintura, estuque, gesso, ladrilhos e detalhes finais com cuidado técnico.',
+      icon: Paintbrush,
+    },
+  ]
 
     return(
-        <>
-            <section className="h-screen bg-slate-200 p-6 md:p-0">
-                <div className="max-w-5xl mx-auto h-full flex flex-col items-center space-y-7 justify-center">
-                    <div className="text-center">
-                        <span className="bg-[#f1ce67] bg-clip-text text-transparent font-bold">Nossos Serviços</span>
-                        <h3 className="font-bold md:text-4xl text-3xl">Soluções completas para a sua obra</h3>
+        <section className="bg-white px-6 py-16 md:px-0 md:py-20">
+                <div className="mx-auto max-w-5xl space-y-10">
+                  <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                    <div className="max-w-2xl space-y-3">
+                      <span className="font-bold text-yellow-700">Nossos serviços</span>
+                      <h2 className="text-3xl font-bold text-zinc-950 md:text-4xl">
+                        O essencial para a sua obra, num só lugar.
+                      </h2>
                     </div>
-
-                    <div className=" grid md:grid-cols-4 grid-cols-1 w-full gap-4">
-                        {
-                            cards?.map(card => (
-                                <div className="border border-l-3 border-t-4 border-t-[#f1ce67] border-l-[#f1ce67] md:p-2 p-3 rounded-lg
-                                  shadow-lg border-slate-200 bg-slate-100 md:space-y-4 space-y-3 "
-                                    key={card}>
-                                        <h4 className="text-lg font-medium">{card?.title}</h4>
-                                        <p>{card?.description}</p>
-                                </div>
-                            ))
-                        }
-                    </div>
-
-                    <div className="mt-6">
-                        <Link 
-                            
-                            to={'/services'}>
-                            <button className="bg-black text-white px-6 py-3 rounded-lg hover:scale-110 cursor-pointer">
-                                Ver Mais
-                            </button>
-                        </Link>
-                    </div>
+                    <p className="max-w-sm leading-relaxed text-slate-600">
+                      Da construção ao acabamento, entregamos soluções práticas para diferentes tipos de projeto.
+                    </p>
+                  </div>
+        
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {services.map((service) => {
+                      const Icon = service.icon
+        
+                      return (
+                        <article key={service.title} className="group flex min-h-56 flex-col justify-between border border-slate-200 bg-slate-100 p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#dfb24a] hover:shadow-xl">
+                          <div className="space-y-4">
+                            <div className="flex h-11 w-11 items-center justify-center bg-zinc-950 text-[#dfb24a] transition duration-300 group-hover:bg-[#dfb24a] group-hover:text-zinc-950">
+                              <Icon size={23} strokeWidth={2.1} />
+                            </div>
+                            <h3 className="text-xl font-bold leading-snug text-zinc-950">{service.title}</h3>
+                          </div>
+                          <p className="mt-4 leading-relaxed text-slate-600">{service.description}</p>
+                        </article>
+                      )
+                    })}
+                  </div>
+        
+                  <Link to="/services" className="inline-flex items-center gap-2 bg-[#dfb24a] px-6 py-3 font-bold text-zinc-950 transition duration-300 hover:bg-[#f8e8a3]">
+                    Ver todos os serviços
+                    <ArrowRight size={18} />
+                  </Link>
                 </div>
-            </section>
-        </>
+              </section>
     )
 }

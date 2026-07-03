@@ -1,4 +1,4 @@
-import teste from '../assets/images/teste.jpg'
+import about from '../assets/fotos/about.png';
 import whatsapp from '../assets/icons/whatsapp.svg'
 import facebook from '../assets/icons/facebook.svg'
 import phone from '../assets/icons/phone.svg'
@@ -42,10 +42,10 @@ function ContactPage() {
 
   return (
     <>
-      <section className='relative min-h-[58vh] overflow-hidden bg-zinc-950'>
-        <img src={teste} className='absolute inset-0 h-full w-full object-cover' alt="" />
+      <section className='relative min-h-[80vh] overflow-hidden bg-zinc-950'>
+        <img src={about} className='absolute inset-0 h-full w-full object-cover object-top' alt="" />
         <div className="absolute inset-0 bg-black/65"></div>
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-slate-100 to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 h-24 "></div>
 
         <div className="relative z-10 mx-auto flex min-h-[58vh] max-w-5xl flex-col justify-end px-6 pb-12 pt-28 md:px-0">
           <div className="max-w-3xl space-y-4">

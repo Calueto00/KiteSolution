@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight, ChevronLeft, ChevronRight, MapPin } from 'lucide-react'
-import teste from '../assets/images/teste.jpg'
-import hero from '../assets/hero.png'
+import civil from '../assets/fotos/civil.jpg'
+import edificio from '../assets/fotos/edificio.jpg'
+import estuque from '../assets/fotos/estuque.jpg'
+import remodelagem from '../assets/fotos/remodelagem.jpg'
+
 
 export default function ProjectSection(){
     const projects = [
@@ -11,28 +14,28 @@ export default function ProjectSection(){
             category: 'Remodelação e acabamentos',
             location: 'Luanda, Angola',
             description: 'Modernização de espaços interiores com acabamento limpo, pintura e soluções funcionais.',
-            image: teste,
+            image: remodelagem,
         },
         {
             title: 'Construção civil',
             category: 'Obra e estrutura',
             location: 'Luanda, Angola',
             description: 'Execução de trabalhos estruturais com foco em segurança, organização e qualidade.',
-            image: hero,
+            image: civil,
         },
         {
             title: 'Acabamentos interiores',
             category: 'Estuque, gesso e pintura',
             location: 'Luanda, Angola',
             description: 'Aplicação de acabamentos para valorizar ambientes e preparar espaços para utilização.',
-            image: teste,
+            image: estuque,
         },
         {
             title: 'Manutenção de edifício',
             category: 'Manutenção preventiva',
             location: 'Luanda, Angola',
             description: 'Intervenções técnicas para preservar a funcionalidade e segurança de edifícios.',
-            image: hero,
+            image: edificio,
         },
     ]
 

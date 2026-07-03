@@ -8,7 +8,8 @@ import {
   Target,
   UsersRound,
 } from 'lucide-react'
-import teste from '../assets/images/teste.jpg'
+import about from '../assets/fotos/about.png'
+import civil from '../assets/fotos/civil.jpg'
 
 function AboutPage() {
   const stats = [
@@ -69,7 +70,7 @@ function AboutPage() {
   return (
     <>
       <section className='relative min-h-[64vh] overflow-hidden bg-zinc-950'>
-        <img src={teste} className='absolute inset-0 h-full w-full object-cover' alt="" />
+        <img src={about} className='absolute inset-0 h-full w-full object-cover' alt="" />
         <div className="absolute inset-0 bg-black/65"></div>
         <div className="absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-slate-100 to-transparent"></div>
 
@@ -92,7 +93,7 @@ function AboutPage() {
       <section className='bg-slate-100 px-6 py-16 md:px-0 md:py-20'>
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-center">
           <div className="relative min-h-[360px] overflow-hidden border border-slate-200 bg-white shadow-xl">
-            <img src={teste} className='absolute inset-0 h-full w-full object-cover' alt="" />
+            <img src={civil} className='absolute inset-0 h-full w-full object-cover' alt="" />
             <div className="absolute inset-0 bg-black/45"></div>
             <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent p-6 pt-24">
               <p className="text-sm font-semibold uppercase tracking-wide text-[#f8e8a3]">Kite Soluções</p>
