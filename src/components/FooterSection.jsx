@@ -1,9 +1,6 @@
 import facebook from '../assets/icons/facebook.svg'
 import instagram from '../assets/icons/instagram.svg'
 import whatsapp from '../assets/icons/whatsapp.svg'
-import github from '../assets/icons/github.svg'
-import linkedin from '../assets/icons/linkedin.svg'
-import tiktok from '../assets/icons/tiktok.svg'
 import email from '../assets/icons/email.svg'
 import phone from '../assets/icons/phone.svg'
 
@@ -25,25 +22,8 @@ const socialIcons = [
         href:'https://wa.me/244933767293',
         icon: whatsapp,
         label: 'WhatsApp'
-    },
-    {
-        id: 'linkedin',
-        href:'https://linkedin.com',
-        icon: linkedin,
-        label: 'LinkedIn'
-    },
-    {
-        id: 'github',
-        href:'https://github.com',
-        icon: github,
-        label: 'GitHub'
-    },
-    {
-        id: 'tiktok',
-        href:'https://tiktok.com',
-        icon: tiktok,
-        label: 'TikTok'
     }
+    
 ]
 
 export default function FooterSection(){
