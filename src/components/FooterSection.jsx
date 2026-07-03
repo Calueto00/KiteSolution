@@ -7,7 +7,7 @@ import whatsapp from '../assets/icons/whatsapp.svg'
 
 const icons = [
     {
-        href:'#',
+        href:'https://www.facebook.com/share/r/1CtZJfAbdZ/?mibextid=wwXIfr',
         icon: facebook
     },
     {
@@ -15,7 +15,7 @@ const icons = [
         icon: whatsapp
     },
     {
-        href:'#',
+        href:'https://www.instagram.com/central.kitesolucoeslda',
         icon: instagram
     }
 ]

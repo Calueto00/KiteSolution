@@ -1,58 +1,174 @@
 import teste from '../assets/images/teste.jpg'
 import whatsapp from '../assets/icons/whatsapp.svg'
 import facebook from '../assets/icons/facebook.svg'
+import phone from '../assets/icons/phone.svg'
+import email from '../assets/icons/email.svg'
+import location from '../assets/icons/location.svg'
 
 function ContactPage() {
+  const contacts = [
+    {
+      label: 'Telefone',
+      value: '(+244) 933 767 293',
+      href: 'tel:+244933767293',
+      icon: phone,
+    },
+    {
+      label: 'Email',
+      value: 'central.kitesolucoeslda@gmail.com',
+      href: 'mailto:central.kitesolucoeslda@gmail.com',
+      icon: email,
+    },
+    {
+      label: 'Localização',
+      value: 'Maianga, Bairro Neves Bendinha, Machado Saldanha - casa nº 52',
+      href: 'https://www.google.com/maps/search/?api=1&query=Maianga%20Bairro%20Neves%20Bendinha%20Machado%20Saldanha%20casa%2052',
+      icon: location,
+    },
+  ]
+
+  const socials = [
+    {
+      label: 'Facebook',
+      href: 'https://www.facebook.com/share/r/1CtZJfAbdZ/?mibextid=wwXIfr',
+      icon: facebook,
+    },
+    {
+      label: 'WhatsApp',
+      href: 'https://wa.me/244933767293',
+      icon: whatsapp,
+    },
+  ]
+
   return (
     <>
-      {/**header aboutpage */}
-                  <div className='md:h-[100vh] h-[100vh] relative'>
-                      <img src={teste} className='inset-0 h-full w-full object-fit' alt="" />
-                      <div className="absolute inset-0 bg-black opacity-50"></div>
-                      <div className="absolute z-10 inset-0">
-                          <div className='h-full md:max-w-5xl mx-auto relative flex flex-col 
-                          items-center justify-center md:space-y-3 space-y-4 md:p-0 p-6'>
-                              <h1 className='md:text-5xl text-3xl font-bold bg-linear-to-r from-[#c28e2c] via-[#dfb24a] 
-                                      to-[#f8e8a3] bg-clip-text text-transparent'>Contacte - Nos</h1>
-                                      <div className='bg-yellow-400 h-1 md:w-20'></div>
+      <section className='relative min-h-[58vh] overflow-hidden bg-zinc-950'>
+        <img src={teste} className='absolute inset-0 h-full w-full object-cover' alt="" />
+        <div className="absolute inset-0 bg-black/65"></div>
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-slate-100 to-transparent"></div>
 
-                                <div className="flex items-center flex-col md:flex-row w-full gap-4">
-                                  <div className="flex-1 space-y-3 p-4 bg-zinc-900 md:p-8 rounded-lg border border-zinc-900 shadow-lg">
-                                    <h2 className='md:text-2xl text-2xl font-bold text-white'>Entre em Contacto</h2>
-                                    <ul className='space-y-3'>
-                                      <li className='space-x-4 text-lg text-slate-100'>
-                                        <span>icon phone</span>
-                                        <span>(+244) 933767293</span>
-                                      </li>
-                                      <li className='space-x-4 text-lg text-slate-100'>
-                                        <span>icon emai</span>
-                                        <span>central.kitesolucoeslda@gmail.com</span>
-                                      </li>
-                                      <li className='space-x-4 text-lg text-slate-100'>
-                                        <span>icon localização</span>
-                                        <span>Maianga, Bairro Neves Bendinha, Machado Saldanha - casa nº 52</span>
-                                      </li>
-                                      <li className='space-x-4 text-lg flex text-slate-100'>
-                                       <img className='w-5' src={facebook} alt="" />
-                                        <span>facebook</span>
-                                      </li>
-                                      <li className='space-x-4 text-lg text-slate-100 flex'>
-                                          <img className='w-5' src={whatsapp} alt="" />
-                                        <span>(+244) 933767293</span>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <form className="flex-1 space-y-3">
-                                        <input type="text" className='outline-none bg-zinc-900 md:p-3 p-2 w-full rounded-lg placeholder-white' placeholder='nome...' />
-                                        <input type="email" className='outline-none bg-zinc-900 md:p-3 p-2 w-full rounded-lg placeholder-white' placeholder='email...'/>
-                                        <textarea name="message" className='outline-none h-25 bg-zinc-900 md:p-3 p-2 w-full rounded-lg placeholder-white' placeholder='mensagem...' id=""></textarea>
-                                        <button className='bg-slate-200 rounded-lg px-6 py-3'>Enviar</button>
-                                  </form>
-                                </div>
-                          </div>
-                      </div>
-                  </div> 
-       
+        <div className="relative z-10 mx-auto flex min-h-[58vh] max-w-5xl flex-col justify-end px-6 pb-12 pt-28 md:px-0">
+          <div className="max-w-3xl space-y-4">
+            <span className="inline-flex w-fit border-l-4 border-[#dfb24a] bg-white/10 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-[#f8e8a3]">
+              Contacto
+            </span>
+            <h1 className='text-4xl font-bold leading-tight text-white md:text-6xl'>
+              Fale connosco sobre a sua próxima obra.
+            </h1>
+            <p className='max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl'>
+              Partilhe a sua ideia, necessidade ou pedido de orçamento. A nossa equipa responde com orientação clara e profissional.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className='bg-slate-100 px-6 py-16 md:px-0 md:py-20'>
+        <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-start">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <span className='font-bold text-yellow-700'>Entre em contacto</span>
+              <h2 className='text-3xl font-bold text-zinc-950 md:text-4xl'>
+                Estamos prontos para ouvir o seu projeto.
+              </h2>
+              <p className='leading-relaxed text-slate-600'>
+                Pode contactar-nos por chamada, email ou WhatsApp. Para pedidos de orçamento,
+                envie uma breve descrição do serviço pretendido e a localização da obra.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {contacts.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target={item.label === 'Localização' ? '_blank' : undefined}
+                  rel={item.label === 'Localização' ? 'noreferrer' : undefined}
+                  className='flex gap-4 border border-slate-200 bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#dfb24a] hover:shadow-lg'
+                >
+                  <span className='flex h-11 w-11 shrink-0 items-center justify-center bg-zinc-950'>
+                    <img className='h-5 w-5' src={item.icon} alt="" />
+                  </span>
+                  <span>
+                    <span className='block font-bold text-zinc-950'>{item.label}</span>
+                    <span className='mt-1 block leading-relaxed text-slate-600'>{item.value}</span>
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {socials.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className='inline-flex items-center gap-3 border border-zinc-200 bg-white px-4 py-3 font-semibold text-zinc-950 shadow-sm transition duration-300 hover:border-[#dfb24a] hover:bg-zinc-950 hover:text-white'
+                >
+                  <img className='h-5 w-5' src={item.icon} alt="" />
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <form className="border border-zinc-900 bg-zinc-950 p-5 shadow-2xl md:p-7">
+            <div className="mb-6 space-y-2">
+              <span className='font-bold text-[#dfb24a]'>Pedido rápido</span>
+              <h2 className='text-2xl font-bold text-white'>Envie-nos uma mensagem</h2>
+              <p className='text-slate-300'>
+                Responderemos assim que possível com os próximos passos.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <label className='mb-2 block text-sm font-semibold text-slate-200' htmlFor="name">Nome</label>
+                <input
+                  id="name"
+                  type="text"
+                  className='w-full border border-white/10 bg-zinc-900 p-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#dfb24a]'
+                  placeholder='O seu nome'
+                />
+              </div>
+
+              <div>
+                <label className='mb-2 block text-sm font-semibold text-slate-200' htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  className='w-full border border-white/10 bg-zinc-900 p-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#dfb24a]'
+                  placeholder='exemplo@email.com'
+                />
+              </div>
+
+              <div>
+                <label className='mb-2 block text-sm font-semibold text-slate-200' htmlFor="phone">Telefone</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  className='w-full border border-white/10 bg-zinc-900 p-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#dfb24a]'
+                  placeholder='+244 900 000 000'
+                />
+              </div>
+
+              <div>
+                <label className='mb-2 block text-sm font-semibold text-slate-200' htmlFor="message">Mensagem</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  className='min-h-36 w-full resize-none border border-white/10 bg-zinc-900 p-3 text-white outline-none transition placeholder:text-slate-500 focus:border-[#dfb24a]'
+                  placeholder='Conte-nos que serviço precisa e onde será realizado.'
+                ></textarea>
+              </div>
+
+              <button type="submit" className='w-full bg-[#dfb24a] px-6 py-3 font-bold text-zinc-950 transition duration-300 hover:bg-[#f8e8a3] md:w-auto'>
+                Enviar mensagem
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
     </>
   )
 }
