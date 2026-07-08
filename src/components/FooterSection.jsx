@@ -7,7 +7,7 @@ import phone from '../assets/icons/phone.svg'
 const socialIcons = [
     {
         id: 'facebook',
-        href:'https://www.facebook.com/share/r/1CtZJfAbdZ/?mibextid=wwXIfr',
+        href:'https://web.facebook.com/central.kitesolucoeslda',
         icon: facebook,
         label: 'Facebook'
     },
@@ -60,10 +60,10 @@ export default function FooterSection(){
                     <div className="flex items-center gap-2">
                         <img src={email} alt="Email" className="w-5 h-5" />
                         <a 
-                            href="mailto:central.kitesolucoeslda@gmail.com" 
+                            href="mailto:info@kitesolucoes.com" 
                             className="text-sm text-slate-200 hover:text-white transition-colors"
                         >
-                            central.kitesolucoeslda@gmail.com
+                            info@kitesolucoes.com
                         </a>
                     </div>
                 </div>

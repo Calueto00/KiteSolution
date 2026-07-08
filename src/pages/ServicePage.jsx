@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { motion } from 'framer-motion'
 import {
     BrickWall,
     Building2,
@@ -107,13 +108,21 @@ export default function ServicePage(){
                         <span className="inline-flex w-fit border-l-4 border-[#dfb24a] bg-white/10 px-3 py-1 text-sm font-semibold uppercase tracking-wide text-[#f8e8a3]">
                             Serviços especializados
                         </span>
-                        <h1 className='text-4xl font-bold leading-tight text-white md:text-6xl'>
+                        <motion.h1 
+                        initial={{opacity:0, x:-30}}
+                        animate={{opacity:1, x:0}}
+                        transition={{duration:1}}
+                        className='text-4xl font-bold leading-tight text-white md:text-6xl'>
                             Soluções completas para construir, renovar e manter.
-                        </h1>
-                        <p className="max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl">
+                        </motion.h1>
+                        <motion.p 
+                        initial={{opacity:0, y:30}}
+                        whileInView={{opacity:1, y:0}}
+                        transition={{duration:1.2}}
+                        className="max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl">
                             Da estrutura aos acabamentos, a Kite Soluções entrega obras com rigor técnico,
                             estética cuidada e foco na tranquilidade do cliente.
-                        </p>
+                        </motion.p>
 
                         <div className="flex flex-wrap gap-3 pt-2">
                             {highlights.map((item) => (
@@ -131,9 +140,13 @@ export default function ServicePage(){
                     <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
                         <div className="max-w-2xl space-y-3">
                             <span className='font-bold text-yellow-700'>O que fazemos</span>
-                            <h2 className="text-3xl font-bold text-zinc-950 md:text-4xl">
+                            <motion.h2 
+                            initial={{opacity:0, x:-30}}
+                            whileInView={{opacity:1, x:0}}
+                            transition={{duration:1}}
+                            className="text-3xl font-bold text-zinc-950 md:text-4xl">
                                 Serviços pensados para cada etapa da obra
-                            </h2>
+                            </motion.h2>
                         </div>
                         <p className="max-w-sm text-slate-600">
                             Atuamos com equipas preparadas para projetos novos, remodelações e manutenção contínua.
@@ -165,8 +178,12 @@ export default function ServicePage(){
 
             <section className='bg-zinc-950 px-6 py-16 md:px-0 md:py-20'>
                 <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-                    <div className="relative min-h-[360px] overflow-hidden border border-white/10 shadow-2xl">
-                        <img src={about} className='absolute inset-0 h-full w-full object-cover' alt="" />
+                    <motion.div 
+                    initial={{opacity:0, x:-30}}
+                    whileInView={{opacity:1, x:0}}
+                    transition={{duration:1}}
+                    className="relative min-h-[360px] overflow-hidden border border-white/10 shadow-2xl">
+                        <img loading='lazy' src={about} className='absolute inset-0 h-full w-full object-cover' alt="" />
                         <div className="absolute inset-0 bg-black/45"></div>
                         <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent p-6 pt-24">
                             <p className="text-sm font-semibold uppercase tracking-wide text-[#f8e8a3]">Kite Soluções</p>
@@ -174,10 +191,14 @@ export default function ServicePage(){
                                 Execução séria para resultados duradouros.
                             </h2>
                         </div>
-                    </div>
+                    </motion.div>
 
                     <div className="space-y-7">
-                        <div className="space-y-3">
+                        <motion.div 
+                        initial={{opacity:0, x:30}}
+                        whileInView={{opacity:1, x:0}}
+                        transition={{duration:1.2}}
+                        className="space-y-3">
                             <span className='font-bold text-[#dfb24a]'>Porquê escolher-nos</span>
                             <h2 className='text-3xl font-bold text-white md:text-4xl'>
                                 Uma equipa próxima, técnica e comprometida.
@@ -186,9 +207,13 @@ export default function ServicePage(){
                                 Combinamos experiência de obra, comunicação objetiva e cuidado com cada detalhe
                                 para que o processo seja mais simples do primeiro contacto à entrega final.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="space-y-4">
+                        <motion.div 
+                        initial={{opacity:0, y:30}}
+                        whileInView={{opacity:1, y:0}}
+                        transition={{duration:1.3}}
+                        className="space-y-4">
                             {reasons.map((reason) => {
                                 const Icon = reason.icon
 
@@ -204,7 +229,7 @@ export default function ServicePage(){
                                     </div>
                                 )
                             })}
-                        </div>
+                        </motion.div>
 
                         <Link to="/contact" className="inline-flex bg-[#dfb24a] px-6 py-3 font-bold text-zinc-950 transition duration-300 hover:bg-[#f8e8a3]">
                             Solicitar orçamento

@@ -1,4 +1,5 @@
 import { Link } from "react-router"
+import { motion } from "framer-motion"
 import {
   ArrowRight,
   
@@ -23,10 +24,19 @@ export default function AboutSection(){
       ]
     return (
         <>
-            <section className="bg-slate-100 px-6 py-16 md:px-0 md:py-20">
+            <section
+                
+                className="bg-slate-100 px-6 py-16 md:px-0 md:py-20">
                 <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-center">
-                <div className="relative min-h-[360px] overflow-hidden border border-slate-200 bg-white shadow-xl">
-                    <img src={about2} className="absolute inset-0 h-full w-full object-cover" alt="" />
+                <motion.div
+                    initial={{ opacity:0, x:-30 }}
+                    whileInView={{opacity:1,x:0}}
+                    viewport={{once:true,amount:0.5}}
+                    transition={{duration:0.9}} 
+                    className="relative min-h-[360px] overflow-hidden border border-slate-200 bg-white shadow-xl">
+                    <motion.img
+                     loading="lay"
+                    src={about2} className="absolute inset-0 h-full w-full object-cover" alt="" />
                     <div className="absolute inset-0 bg-black/45"></div>
                     <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent p-6 pt-24">
                     <p className="text-sm font-semibold uppercase tracking-wide text-[#f8e8a3]">Kite Soluções</p>
@@ -34,9 +44,14 @@ export default function AboutSection(){
                         Planeamento, execução e acabamento no mesmo nível de cuidado.
                     </h2>
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="space-y-6">
+                <motion.div
+                    initial={{ opacity:0, x:30 }}
+                    whileInView={{opacity:1,x:0}}
+                    viewport={{once:true,amount:0.5}}
+                    transition={{duration:0.9}}
+                 className="space-y-6">
                     <div className="space-y-3">
                     <span className="font-bold text-yellow-700">Sobre nós</span>
                     <h2 className="text-3xl font-bold text-zinc-950 md:text-4xl">
@@ -65,7 +80,7 @@ export default function AboutSection(){
                     Conhecer a empresa
                     <ArrowRight size={18} />
                     </Link>
-                </div>
+                </motion.div>
                 </div>
             </section>
         </>

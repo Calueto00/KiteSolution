@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router'
+import { motion } from 'framer-motion'
 import {
   ArrowRight
 } from "lucide-react"
@@ -7,7 +8,11 @@ import {
 export default function ContactSection(){
     return(
         <section className="bg-slate-100 px-6 py-16 md:px-0 md:py-20">
-        <div className="mx-auto grid max-w-5xl gap-8 border border-slate-200 bg-white p-6 shadow-xl md:grid-cols-[1fr_0.9fr] md:items-center md:p-8">
+        <motion.div 
+        initial={{opacity:0, y:30}}
+        whileInView={{opacity:1, y:0}}
+        transition={{duration:1}}
+        className="mx-auto grid max-w-5xl gap-8 border border-slate-200 bg-white p-6 shadow-xl md:grid-cols-[1fr_0.9fr] md:items-center md:p-8">
           <div className="space-y-3">
             <span className="font-bold text-yellow-700">Pronto para começar?</span>
             <h2 className="text-3xl font-bold text-zinc-950 md:text-4xl">
@@ -28,7 +33,7 @@ export default function ContactSection(){
               WhatsApp
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
     )
 }

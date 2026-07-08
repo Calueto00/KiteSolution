@@ -1,5 +1,6 @@
 import about from '../assets/fotos/about.png';
 import { Link } from 'react-router';
+import { motion } from 'framer-motion';
 
 import {
   ArrowRight,
@@ -15,7 +16,7 @@ export default function HeroSection(){
   ]
     return (
         <section className="relative min-h-screen overflow-hidden bg-zinc-950">
-        <img src={about} className="absolute inset-0 h-full w-full object-cover" alt="" />
+        <img loading='eager' src={about} className="absolute inset-0 h-full w-full object-cover" alt="" />
         <div className="absolute inset-0 bg-black/70"></div>
         <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-zinc-950 to-transparent"></div>
 
@@ -26,16 +27,28 @@ export default function HeroSection(){
             </span>
 
             <div className="space-y-4">
-              <h1 className="text-5xl font-bold leading-tight text-white md:text-7xl">
+              <motion.h1
+                initial={{ opacity:0, x:-50 }}
+                animate={{ opacity:1, x:0 }}
+                transition={{ duration:2}}
+                className="text-5xl font-bold  text-white md:text-7xl">
                 Construímos o futuro. Acabamos com excelência.
-              </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl">
+              </motion.h1>
+              <motion.p
+                initial={{ opacity:0, y:20 }}
+                animate={{ opacity:1, y:0 }}
+                transition={{ duration:2, delay:0.5 }}
+                className="max-w-2xl text-lg leading-relaxed text-slate-200 md:text-xl">
                 Soluções completas em construção civil, remodelação, manutenção e acabamentos modernos
                 para projetos residenciais, comerciais e institucionais.
-              </p>
+              </motion.p>
             </div>
 
-            <div className="flex flex-col gap-3 pt-2 sm:flex-row">
+            <motion.div
+              initial={{ opacity:0, y:30 }}
+              animate={{ opacity:1, y:0 }}
+              transition={{ duration:2, delay:1 }} 
+              className="flex flex-col gap-3 pt-2 sm:flex-row">
               <Link to="/services" className="inline-flex items-center justify-center gap-2 bg-[#dfb24a] px-6 py-3 font-bold text-zinc-950 transition duration-300 hover:bg-[#f8e8a3]">
                 Ver serviços
                 <ArrowRight size={18} />
@@ -43,7 +56,7 @@ export default function HeroSection(){
               <Link to="/contact" className="inline-flex items-center justify-center border border-white/25 bg-white/10 px-6 py-3 font-bold text-white transition duration-300 hover:border-[#dfb24a] hover:bg-zinc-950">
                 Solicitar orçamento
               </Link>
-            </div>
+            </motion.div>
 
             <div className="flex flex-wrap gap-3 pt-3">
               {highlights.map((item) => (

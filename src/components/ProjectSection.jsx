@@ -6,6 +6,8 @@ import edificio from '../assets/fotos/edificio.jpg'
 import estuque from '../assets/fotos/estuque.jpg'
 import remodelagem from '../assets/fotos/remodelagem.jpg'
 
+import { motion } from 'framer-motion'
+
 
 export default function ProjectSection(){
     const projects = [
@@ -57,7 +59,12 @@ export default function ProjectSection(){
     return(
         <section className="bg-slate-100 px-6 py-16 md:px-0 md:py-20">
             <div className="mx-auto max-w-5xl space-y-10">
-                <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                <motion.div 
+                        initial={{ opacity:0, x:-30 }}
+                        whileInView={{opacity:1,x:0}}
+                        
+                        transition={{duration:1}}
+                className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
                     <div className="max-w-2xl space-y-3">
                         <span className='font-bold text-yellow-700'>Projectos realizados</span>
                         <h2 className='text-3xl font-bold text-zinc-950 md:text-4xl'>
@@ -67,11 +74,16 @@ export default function ProjectSection(){
                     <p className='max-w-sm leading-relaxed text-slate-600'>
                         Cada projeto reflete cuidado técnico, organização em obra e atenção aos detalhes que fazem diferença.
                     </p>
-                </div>
+                </motion.div>
 
-                <div className="grid overflow-hidden border border-slate-200 bg-white shadow-xl md:grid-cols-[1.15fr_0.85fr]">
-                    <div className="relative min-h-[340px] md:min-h-[500px]">
-                        <img
+                <div className="grid overflow-hidden shadow-xl md:grid-cols-[1.15fr_0.85fr]">
+                    <motion.div 
+                    initial={{ opacity:0, y:30 }}
+                    whileInView={{opacity:1,y:0}}
+                    viewport={{once:true,amount:0.5}}
+                    transition={{duration:1}}
+                    className="relative min-h-[340px] md:min-h-[500px]">
+                        <img loading='lazy'
                             className='absolute inset-0 h-full w-full object-cover'
                             src={activeProject.image}
                             alt={activeProject.title}
@@ -98,7 +110,7 @@ export default function ProjectSection(){
                                 <ChevronRight size={22} />
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
 
                     <div className="flex flex-col justify-between bg-zinc-950 p-5 text-white md:p-7">
                         <div className="space-y-5">

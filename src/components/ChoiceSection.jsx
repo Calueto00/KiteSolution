@@ -1,12 +1,10 @@
-
-
 import {
   BadgeCheck,
   Clock,
   ShieldCheck,
   UsersRound,
 } from "lucide-react"
-
+import { motion } from "framer-motion"
 export default function ChoiceSection(){
 
     const reasons = [
@@ -29,12 +27,16 @@ export default function ChoiceSection(){
           title: 'Segurança em obra',
           description: 'Priorizamos práticas responsáveis para proteger pessoas, espaços e resultados.',
           icon: ShieldCheck,
-        },
+        }
       ]
     return (
         <section className="bg-zinc-950 px-6 py-16 md:px-0 md:py-20">
         <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-          <div className="space-y-4">
+          <motion.div 
+          initial={{opacity:0, x:-25}}
+          whileInView={{opacity:1, x:0}}
+          transition={{duration:1}} 
+          className="space-y-4">
             <span className="font-bold text-[#dfb24a]">Porquê escolher-nos</span>
             <h2 className="text-3xl font-bold text-white md:text-4xl">
               Trabalho sério, comunicação clara e resultados duradouros.
@@ -43,9 +45,13 @@ export default function ChoiceSection(){
               Acompanhamos cada fase com responsabilidade para que a obra avance com organização,
               segurança e atenção ao que realmente importa para o cliente.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <motion.div 
+          initial={{opacity:0, y:30}}
+          whileInView={{opacity:1, y:0}}
+          transition={{duration:1.2}}
+          className="grid gap-4 sm:grid-cols-2">
             {reasons.map((reason) => {
               const Icon = reason.icon
 
@@ -59,7 +65,7 @@ export default function ChoiceSection(){
                 </article>
               )
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
     )
